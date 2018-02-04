@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "apollo-client-preset": "^1.0.6",
+    "bulma": "^0.6.2",
     "graphql": "^0.12.3",
     "graphql-tag": "^2.6.1",
     "node-sass-chokidar": "^0.0.3",
@@ -14,8 +15,7 @@
     "react-helmet": "^5.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17",
-    "spectre.css": "^0.5.0"
+    "react-scripts": "1.0.17"
   },
   "scripts": {
     "build-main-css": "node-sass-chokidar styles/ -o public/",

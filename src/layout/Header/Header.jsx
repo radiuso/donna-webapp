@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
   render() {
     return (
-      <header className="navbar">
-        <section className="navbar-section">
-          <Link to="/" className="navbar-brand mr-2">Donna</Link>
-        </section>
-      </header>
+      <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          <Link to="/" className="navbar-item">Donna</Link>
+        </div>
+      </nav>
     );
   }
 }

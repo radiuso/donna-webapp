@@ -20,7 +20,7 @@ class Home extends Component {
           </div>
           <p className="empty-title h5">Welcome to Donna (using api v{version})</p>
           <p className="empty-subtitle">Please login to enjoy</p>
-          <Link to="/auth/login" className="btn">Login</Link>
+          <Link to="/auth/login" className="button">Login</Link>
         </div>
       </div>
     );

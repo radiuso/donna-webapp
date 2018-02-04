@@ -35,7 +35,7 @@ class Login extends Component {
               </div>
 
               <div className="empty-action">
-                <button className="btn btn-primary">Login</button>
+                <button className="button is-primary">Login</button>
               </div>
             </div>
           </form>
