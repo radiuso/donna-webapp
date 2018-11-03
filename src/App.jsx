@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
-import Home from './Home';
-import Auth from './Auth';
-import Customers from './views/customers/CustomersContainer';
-import Header from './layout/Header';
+import gql from 'graphql-tag';
+
+import Home from './views/Home';
+import Auth from './views/Auth';
+import Customers from './views/Customers';
+import Header from './components/Header';
 import { setToken } from './services/auth.service';
 
 import './App.css';
