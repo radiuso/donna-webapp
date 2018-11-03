@@ -1,12 +1,15 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import CustomersListView from './CustomersListView';
+import CustomerDetailsView from './CustomerDetailsView';
 
-const CustomersContainer = () => (
-    <div>
-        <Route path="/" component={CustomersListView} />
-    </div>
+// Register all routes for the customer part
+const CustomersContainer = ({ match }) => (
+    <Switch>
+        <Route path={`${match.url}`} exact component={CustomersListView} />
+        <Route path={`${match.url}/:id`} component={CustomerDetailsView} />
+    </Switch>
 );
 
 export default CustomersContainer;

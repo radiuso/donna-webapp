@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
@@ -23,14 +23,16 @@ const App = _ => (
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :({error})</p>;
 
-      setToken(data.token);
+      setToken(data.login.token);
       return (
         <React.Fragment>
           <Header />
-          <div className="container">
-            <Route path="/" exact component={Home} />
-            <Route path="/auth" component={Auth} />
-            <Route path="/customers" component={Customers} />
+          <div className="container main-container">
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/auth" component={Auth} />
+              <Route path="/customers" component={Customers} />
+            </Switch>
           </div>
         </React.Fragment>
       );

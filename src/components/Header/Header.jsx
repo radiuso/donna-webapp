@@ -7,7 +7,7 @@ const Header = _ => (
       <Link to="/" className="navbar-item">Donna</Link>
     </div>
     <div className="navbar-menu">
-      <div class="navbar-start">
+      <div className="navbar-start">
         <Link to="/customers" className="navbar-item">Clients</Link>
       </div>
     </div>

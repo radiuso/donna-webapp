@@ -12,9 +12,10 @@ const client = new ApolloClient({
   uri: 'http://localhost:8080/graphql',
   request: async operation => {
     const token = await getToken();
+
     operation.setContext({
       headers: {
-        authorization: token ? `Bearer ${token}` : ''
+        authorization: token ? `${token}` : ''
       }
     });
   }
