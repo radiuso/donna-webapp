@@ -1,3 +1,6 @@
+@import '../styles/variables';
+
 .main-container {
   margin-top: 1rem;
+  margin-left: $content_margin_left;
 }

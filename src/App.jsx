@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 import Home from './views/Home';
 import Auth from './views/Auth';
 import Customers from './views/Customers';
-import Header from './components/Header';
+import Nav from './components/Nav';
 import { setToken } from './services/auth.service';
 
 import './App.css';
@@ -26,7 +26,7 @@ const App = _ => (
       setToken(data.login.token);
       return (
         <React.Fragment>
-          <Header />
+          <Nav />
           <div className="container main-container">
             <Switch>
               <Route path="/" exact component={Home} />

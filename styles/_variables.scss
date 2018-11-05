@@ -1,0 +1,22 @@
+// COLORS
+$primary: #3f4fa6;
+$secondary: #DD3C55;
+$light: #fff;
+$primary-darker: #4051a9;
+$primary-lighter: #4051a9;
+
+// $primary-invert: #B8B1CD;
+
+$content-margin-left: 7rem;
+
+// NAV
+$nav-text: $light;
+$nav-text-hover: $secondary;
+$nav-bg: $primary;
+$nav-bg-hover: $primary-darker;
+$nav-width: 5rem;
+$nav-width-opened: 10rem;
+
+@import 'node_modules/bulma/sass/utilities/initial-variables';
+@import 'node_modules/bulma/sass/utilities/functions';
+@import 'node_modules/bulma/sass/utilities/derived-variables';
