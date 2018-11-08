@@ -1,6 +1,11 @@
 @import '../styles/variables';
 
+body {
+  overflow: auto;
+}
+
 .main-container {
-  margin-top: 1rem;
-  margin-left: $content_margin_left;
+  padding-top: 1rem;
+  padding-left: $content_margin_left;
+  overflow: auto;
 }

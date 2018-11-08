@@ -14,6 +14,7 @@ const Nav = () => (
         <ul className="nav-items flex-column">
             <NavItem icon="home" text="Accueil" to="/" />
             <NavItem icon="users" text="Clients" to="/customers" />
+            <NavItem icon="calendar-alt" text="Commandes" to="/orders" />
         </ul>
     </nav>
 );

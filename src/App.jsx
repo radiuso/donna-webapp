@@ -6,6 +6,7 @@ import gql from 'graphql-tag';
 import Home from './views/Home';
 import Auth from './views/Auth';
 import Customers from './views/Customers';
+import Orders from './views/Orders';
 import Nav from './components/Nav';
 import { setToken } from './services/auth.service';
 
@@ -32,6 +33,7 @@ const App = _ => (
               <Route path="/" exact component={Home} />
               <Route path="/auth" component={Auth} />
               <Route path="/customers" component={Customers} />
+              <Route path="/orders" component={Orders} />
             </Switch>
           </div>
         </React.Fragment>

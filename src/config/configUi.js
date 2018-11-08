@@ -1,10 +1,19 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUsers, faHome } from '@fortawesome/free-solid-svg-icons'
+import {
+    faUsers,
+    faHome,
+    faCalendarAlt,
+    faSearch,
+    faPlus,
+} from '@fortawesome/free-solid-svg-icons'
 
 const configUI = () => {
     library.add(
         faUsers,
         faHome,
+        faCalendarAlt,
+        faSearch,
+        faPlus,
     );
 };
 
