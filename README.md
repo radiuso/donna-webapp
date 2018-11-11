@@ -4,6 +4,12 @@ React application used to consume graphql api from donna-api (https://github.com
 
 ## Librairies
 * react
-* spectre.css
+* bulma
 * react-router
 * react-helmet
+
+## Run the app
+
+> npm install
+> npm run serve
+
