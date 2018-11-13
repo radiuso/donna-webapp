@@ -9,6 +9,7 @@
     "apollo-boost": "^0.1.19",
     "apollo-client-preset": "^1.0.6",
     "bulma": "^0.6.2",
+    "bulma-helpers": "^0.2.3",
     "classnames": "^2.2.6",
     "date-fns": "^1.29.0",
     "graphql": "^14.0.2",
