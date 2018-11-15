@@ -8,6 +8,7 @@ import Auth from './views/Auth';
 import Customers from './views/Customers';
 import Orders from './views/Orders';
 import Nav from './components/Nav';
+import Error from './components/Error';
 import { setToken } from './services/auth.service';
 
 import './App.css';
@@ -22,7 +23,7 @@ const App = _ => (
   <Query query={LOGIN_QUERY}>
     {({ loading, error, data }) => {
       if (loading) return <p>Loading...</p>;
-      if (error) return <p>Error :({error})</p>;
+      if (error) return <Error error={error} />;
 
       setToken(data.login.token);
       return (
