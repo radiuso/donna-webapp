@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 
 class QueryComponent extends Component {
     query = null
+    state = {
+        variables: {},
+    }
 
     render() {
         if (this.query !== null) {
             return (
-                <Query query={this.query}>
+                <Query query={this.query} variables={this.state.variables}>
                     {({ loading, error, data }) => {
                         if (loading) return <p>Loading...</p>;
                         if (error) return <p>Error</p>;

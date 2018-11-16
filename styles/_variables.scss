@@ -4,7 +4,11 @@ $secondary: #DD3C55;
 $light: #fff;
 $primary-darker: #4051a9;
 $primary-lighter: #4051a9;
+$green: #0A9025;
+$yellow: #E3DC54;
+$blue: #1D7FAA;
 
+$subtext: #999;
 // $primary-invert: #B8B1CD;
 
 $content-margin-left: 7rem;
@@ -15,7 +19,7 @@ $nav-text-hover: $secondary;
 $nav-bg: $primary;
 $nav-bg-hover: $primary-darker;
 $nav-width: 5rem;
-$nav-width-opened: 10rem;
+$nav-width-opened: 13rem;
 
 @import 'node_modules/bulma/sass/utilities/initial-variables';
 @import 'node_modules/bulma/sass/utilities/functions';

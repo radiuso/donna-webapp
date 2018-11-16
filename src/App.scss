@@ -1,11 +1,6 @@
 @import '../styles/variables';
 
-body {
-  overflow: auto;
-}
-
 .main-container {
   padding-top: 1rem;
   padding-left: $content_margin_left;
-  overflow: auto;
 }

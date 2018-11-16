@@ -48,7 +48,7 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            border-left: 1px solid transparent;
+            border-left: 2px solid transparent;
 
             &.is-active {
                 border-left-color: $nav-text-hover;
