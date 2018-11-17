@@ -12,6 +12,8 @@ import Error from './components/Error';
 import { setToken } from './services/auth.service';
 
 import './App.css';
+import 'react-dates/lib/css/_datepicker.css';
+
 
 const LOGIN_QUERY = gql`{
   login (username: "admin@donna.com", password: "securepwd") {

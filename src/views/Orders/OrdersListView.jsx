@@ -1,10 +1,10 @@
 import React from 'react'
-import { format } from 'date-fns'
+import moment from 'moment'
 import gql from 'graphql-tag'
-
 import QueryComponent from '../../components/QueryComponent'
 import Icon from '../../components/Icon'
 import OrderItem from '../../components/OrderItem'
+import DatePicker from '../../components/DatePicker'
 
 class OrdersListView extends QueryComponent {
     query = gql`
@@ -24,9 +24,14 @@ class OrdersListView extends QueryComponent {
 
     state = {
         variables: {
-            date: format(new Date(), 'YYYY-MM-DD'),
+            date: moment().format('YYYY-MM-DD'),
         },
-        currentDate: Date.now(),
+        currentDate: moment(),
+    }
+
+    constructor(props) {
+        super(props);
+        this.datePicker = React.createRef();
     }
 
     renderData({ ordersFor }) {
@@ -36,9 +41,11 @@ class OrdersListView extends QueryComponent {
                     <div className="level-left">
                         <div className="level-item has-text-centered subtitle is-3">
                             <span className="has-text-primary has-margin-right-10">
-                                { format(this.state.currentDate, 'DD MMMM YYYY') }
+                                { this.state.currentDate.format('DD MMMM YYYY') }
                             </span>
-                            <button className="button is-primary is-inverted">
+                            <button className="button is-primary is-inverted"
+                                onClick={() => this.showDatePicker()}
+                            >
                                 <Icon icon="calendar-alt" />
                             </button>
                         </div>
@@ -55,6 +62,11 @@ class OrdersListView extends QueryComponent {
                     </div>
                 </div>
 
+                <DatePicker
+                    ref={this.datePicker}
+                    onDayChange={(day) => this.onDayChange(day)}
+                />
+
                 <div>
                     {ordersFor.map(order => (
                         <OrderItem order={order} key={order.id} />
@@ -64,8 +76,17 @@ class OrdersListView extends QueryComponent {
         );
     }
 
-    goToOrder(order) {
-        console.log(order);
+    showDatePicker() {
+        this.datePicker.current.show();
+    }
+
+    onDayChange(day) {
+        this.setState({
+            currentDate: day,
+            variables: {
+                date: day.format('YYYY-MM-DD'),
+            },
+        })
     }
 }
 
