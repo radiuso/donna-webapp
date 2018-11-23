@@ -1,10 +1,14 @@
-import React from 'react';
-import './Fab.scss';
+import React from 'react'
+import './Fab.scss'
 
-const Fab = ({ children }) => (
-    <div className="fab-container">
-        <button class="button fab">{ children }</button>
-    </div>
-)
+const Fab = ({ children, tag, ...rest }) => {
+    const Tag = tag || 'button'
 
-export default Fab;
+    return (
+        <div className="fab-container">
+            <Tag className="button fab" {...rest}>{ children }</Tag>
+        </div>
+    )
+}
+
+export default Fab

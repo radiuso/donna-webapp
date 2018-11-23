@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
@@ -33,7 +33,7 @@ const App = _ => (
       return (
         <React.Fragment>
           <Nav />
-          <Fab><Icon icon="plus" /></Fab>
+          <Fab tag={Link} to="/orders/create"><Icon icon="plus" /></Fab>
           <div className="main-container">
             <div className="container">
               <Switch>

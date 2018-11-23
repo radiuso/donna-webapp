@@ -51,14 +51,7 @@ class OrdersListView extends QueryComponent {
                         </div>
                     </div>
                     <div className="level-right">
-                        <div className="level-item has-text-centered subtitle is-3">
-                            <button className="button is-text is-primary is-inverted">
-                                <Icon icon="search" />
-                            </button>
-                            <button className="button is-text is-primary is-inverted">
-                                <Icon icon="plus" />
-                            </button>
-                        </div>
+
                     </div>
                 </div>
 
