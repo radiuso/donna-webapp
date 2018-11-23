@@ -9,6 +9,8 @@ import Customers from './views/Customers';
 import Orders from './views/Orders';
 import Nav from './components/Nav';
 import Error from './components/Error';
+import Fab from './components/Fab';
+import Icon from './components/Icon';
 import { setToken } from './services/auth.service';
 
 import './App.css';
@@ -31,13 +33,16 @@ const App = _ => (
       return (
         <React.Fragment>
           <Nav />
-          <div className="container main-container">
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/auth" component={Auth} />
-              <Route path="/customers" component={Customers} />
-              <Route path="/orders" component={Orders} />
-            </Switch>
+          <Fab><Icon icon="plus" /></Fab>
+          <div className="main-container">
+            <div className="container">
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/auth" component={Auth} />
+                <Route path="/customers" component={Customers} />
+                <Route path="/orders" component={Orders} />
+              </Switch>
+            </div>
           </div>
         </React.Fragment>
       );

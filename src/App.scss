@@ -1,8 +1,8 @@
 @import '../styles/variables';
 
 .main-container {
-  padding-top: 1rem;
   padding-left: $content_margin_left;
+  padding-bottom: $content-padding-bottom;
 }
 
 .is-hidden {

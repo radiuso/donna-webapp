@@ -1,26 +1,27 @@
 // COLORS
 $primary: #3f4fa6;
-$secondary: #DD3C55;
+$secondary: #dd3c55;
 $light: #fff;
 $primary-darker: #4051a9;
 $primary-lighter: #4051a9;
-$green: #0A9025;
-$yellow: #E3DC54;
-$blue: #1D7FAA;
+$green: #0a9025;
+$yellow: #e3dc54;
+$blue: #1d7faa;
 
 $subtext: #999;
 // $primary-invert: #B8B1CD;
-
-$content-margin-left: 7rem;
 
 // NAV
 $nav-text: $light;
 $nav-text-hover: $secondary;
 $nav-bg: $primary;
 $nav-bg-hover: $primary-darker;
-$nav-width: 5rem;
-$nav-width-opened: 13rem;
+$nav-height: 3.7rem;
 
-@import 'node_modules/bulma/sass/utilities/initial-variables';
-@import 'node_modules/bulma/sass/utilities/functions';
-@import 'node_modules/bulma/sass/utilities/derived-variables';
+// CONTENT
+$content-margin-left: 0;
+$content-padding-bottom: 4rem;
+
+@import "node_modules/bulma/sass/utilities/initial-variables";
+@import "node_modules/bulma/sass/utilities/functions";
+@import "node_modules/bulma/sass/utilities/derived-variables";

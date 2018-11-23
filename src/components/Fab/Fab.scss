@@ -1,0 +1,24 @@
+.fab-container {
+
+    position: fixed;
+	bottom: 5rem;
+	left: 0;
+    right: 0;
+    height: 0;
+	/* center all inline content */
+	text-align: center;
+
+    z-index: 999999;
+
+    .fab {
+        display: inline-flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        width: 3.5rem;
+        height: 3.5rem;
+
+        border-radius: 50%;
+    }
+}

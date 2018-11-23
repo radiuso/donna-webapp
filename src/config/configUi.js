@@ -6,6 +6,7 @@ import {
     faSearch,
     faPlus,
     faTimes,
+    faShoppingBag,
 } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment'
 import 'moment/locale/fr'
@@ -19,6 +20,7 @@ const configUI = () => {
         faSearch,
         faPlus,
         faTimes,
+        faShoppingBag,
     )
 
     // config locale moment
