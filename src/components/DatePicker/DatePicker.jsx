@@ -37,7 +37,7 @@ class DatePicker extends Component {
 
         return (
             <div className={classnames({
-                'date-picker': true,
+                'app-date-picker': true,
                 'date-picker--fullscreen': isFullscreen,
                 'is-hidden': this.state.isHidden,
                 'is-show': !this.state.isHidden,

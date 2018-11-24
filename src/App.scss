@@ -1,10 +1,23 @@
 @import '../styles/variables';
 
+body, html {
+  background: $light-grey;
+}
+
 .main-container {
-  padding-left: $content_margin_left;
   padding-bottom: $content-padding-bottom;
+  padding-top: $content-padding-top;
 }
 
 .is-hidden {
   display: none;
+}
+
+
+.has-light-bg {
+  background-color: $white;
+}
+
+.button.is-primary.is-inverted.is-text {
+  background-color: transparent;
 }

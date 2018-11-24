@@ -1,0 +1,9 @@
+@import '../../../styles/variables';
+
+.orders {
+    .column {
+        padding-top: $view-padding-top;
+        height: $content-height;
+        overflow: auto;
+    }
+}

@@ -1,12 +1,16 @@
 // COLORS
+$green: #0a9025;
+$yellow: #e3dc54;
+$blue: #1d7faa;
+$light-grey: #F5F6FE;
+
+// SEMANTICS COLORS
 $primary: #3f4fa6;
 $secondary: #dd3c55;
 $light: #fff;
 $primary-darker: #4051a9;
 $primary-lighter: #4051a9;
-$green: #0a9025;
-$yellow: #e3dc54;
-$blue: #1d7faa;
+
 
 $subtext: #999;
 // $primary-invert: #B8B1CD;
@@ -21,6 +25,9 @@ $nav-height: 3.7rem;
 // CONTENT
 $content-margin-left: 0;
 $content-padding-bottom: 4rem;
+$content-padding-top: 0;
+$content-height: 94vh;
+$view-padding-top: 3rem;
 
 @import "node_modules/bulma/sass/utilities/initial-variables";
 @import "node_modules/bulma/sass/utilities/functions";
