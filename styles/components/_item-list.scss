@@ -1,0 +1,9 @@
+.item-list {
+    .item {
+        margin-bottom: 1rem;
+
+        &.is-selectable {
+            cursor: pointer;
+        }
+    }
+}

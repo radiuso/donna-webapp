@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'node_modules/bulma/bulma';
 @import 'node_modules/bulma-helpers/bulma-helpers';
+@import 'node_modules/bulma-o-steps/bulma-steps.scss';
 
 // COMPONENTS
+@import './components/columns';
 @import './components/table';

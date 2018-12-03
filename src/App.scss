@@ -13,9 +13,21 @@ body, html {
   display: none;
 }
 
+.is-horizontally-centered {
+  display: flex;
+  justify-content: center;
+}
+
+.has-padding-top {
+  padding: $view-padding-top;
+}
 
 .has-light-bg {
   background-color: $white;
+}
+
+.has-text-secondary {
+  color: $secondary !important;
 }
 
 .button.is-primary.is-inverted.is-text {

@@ -21,7 +21,7 @@ const CustomersView = () => (
 
             const { customers } = data;
             return (
-                <React.Fragment>
+                <div className="container">
                     <table className="table is-striped is-hoverable is-fullwidth">
                         <tbody>
                             {customers.map(customer => (
@@ -36,7 +36,7 @@ const CustomersView = () => (
                             ))}
                         </tbody>
                     </table>
-                </React.Fragment>
+                </div>
             );
         }}
     </Query>

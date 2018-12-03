@@ -35,14 +35,12 @@ const App = _ => (
           <Nav />
           <Fab tag={Link} to="/orders/create"><Icon icon="plus" /></Fab>
           <div className="main-container">
-            <div className="container">
-              <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/auth" component={Auth} />
-                <Route path="/customers" component={Customers} />
-                <Route path="/orders" component={Orders} />
-              </Switch>
-            </div>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/auth" component={Auth} />
+              <Route path="/customers" component={Customers} />
+              <Route path="/orders" component={Orders} />
+            </Switch>
           </div>
         </React.Fragment>
       );
