@@ -11,6 +11,7 @@ import {
     faShoppingBag,
     faCartArrowDown,
     faCheck,
+    faCheckCircle,
 } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment'
 import 'moment/locale/fr'
@@ -29,6 +30,7 @@ const configUI = () => {
         faShoppingBag,
         faCartArrowDown,
         faCheck,
+        faCheckCircle,
     )
 
     // config locale moment

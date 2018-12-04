@@ -5,7 +5,7 @@ const OrderPreview = () => (
     <OrderContext.Consumer>
         {order => (
             <React.Fragment>
-                <p>{order.customer ? order.customer.id : 'Aucun client'}</p>
+                <p>{order.customer ? `${order.customer.firstName} ${order.customer.lastName}`  : 'Aucun client'}</p>
                 <p>{order.procuts ? order.products.length : 0}</p>
                 <p>{order.targetDate}</p>
             </React.Fragment>

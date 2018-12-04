@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { OrderContext } from '../../contexts/OrderContext';
 import Icon from '../../components/Icon'
-import CustomersList from '../../components/CustomersList/CustomersList';
+import CustomersList from '../../components/CustomersList';
 import OrderPreview from '../../components/OrderPreview';
 
 const FIRST_STEP = 1
@@ -140,7 +140,13 @@ class OrderCreateView extends Component {
 
         switch(currentStep) {
             case 1:
-                return (<CustomersList customers={customers} onSelected={(c) => this.onCustomerSelected(c)} />)
+                return (
+                    <CustomersList
+                        customers={customers}
+                        onSelected={(c) => this.onCustomerSelected(c)}
+                        selectedCustomer={this.state.order.customer}
+                    />
+                )
             case 2:
                 return "2"
             default:
