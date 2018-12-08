@@ -6,9 +6,8 @@ import { OrderContext } from '../../contexts/OrderContext';
 import Icon from '../../components/Icon'
 import CustomersList from '../../components/CustomersList';
 import OrderPreview from '../../components/OrderPreview';
+import ProductsList from '../../components/ProductsList';
 
-const FIRST_STEP = 1
-const LAST_STEP = 3
 
 const QUERY = gql`{
     customers {
@@ -16,40 +15,14 @@ const QUERY = gql`{
         firstName,
         lastName,
         city
+    },
+    products {
+        id,
+        label,
+        category
     }
 }`;
 class OrderCreateView extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            currentStep: 1,
-            order: {
-                customer: null,
-                products: [],
-                targetDate: null,
-            }
-        }
-    }
-
-    nextStep() {
-        if (this.state.currentStep < LAST_STEP) {
-            this.setStep(this.state.currentStep + 1)
-        }
-    }
-
-    prevStep() {
-        if (this.state.currentStep > FIRST_STEP) {
-            this.setStep(this.state.currentStep - 1)
-        }
-    }
-
-    setStep(step) {
-        this.setState({
-            currentStep: step,
-        })
-    }
-
     render() {
         return (
             <Query query={QUERY}>
@@ -57,114 +30,110 @@ class OrderCreateView extends Component {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error</p>;
 
-                    const { customers } = data;
-                    return (
-                        <OrderContext.Provider value={this.state.order}>
-                            { this.renderData(customers) }
-                        </OrderContext.Provider>
-                    );
-
+                    return this.renderData(data)
                 }}
             </Query>
         )
     }
 
-    renderData(customers) {
-        const { currentStep } = this.state
-
+    renderData(data) {
         return (
-            <div className="columns">
-                <div className="column content-column has-light-bg is-three-quarters">
-                    <ul className="steps has-content-centered">
-                        <li className={classnames({
-                            'steps-segment': true,
-                            'is-active': currentStep === 1,
-                        })}
-                            onClick={() => this.setStep(1)}
-                        >
-                            <span className="steps-marker">
-                                <Icon icon="user" />
-                            </span>
-                            <div className="steps-content">
-                                <p>Client</p>
-                            </div>
-                        </li>
-                        <li className={classnames({
-                            'steps-segment': true,
-                            'is-active': currentStep === 2,
-                        })}
-                            onClick={() => this.setStep(2)}
-                        >
-                            <span className="steps-marker">
-                                <Icon icon="cart-arrow-down" />
-                            </span>
-                            <div className="steps-content">
-                                <p>Produits</p>
-                            </div>
-                        </li>
-                        <li className={classnames({
-                            'steps-segment': true,
-                            'is-active': currentStep === 3,
-                        })}
-                            onClick={() => this.setStep(3)}
-                        >
-                            <span className="steps-marker">
-                                <Icon icon="check" />
-                            </span>
-                            <div className="steps-content">
-                                <p>Validation</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div className="step-content">
-                        { this.renderCurrentStep(customers) }
-                    </div>
-                    <div className="level">
-                        <div className="level-left">
-                            <button className="button is-rounded" onClick={() => this.prevStep()}>Précédent</button>
+            <OrderContext.Consumer>
+                { ({ currentStep, setStep, prevStep, nextStep }) => (
+                    <div className="columns">
+                    <div className="column content-column has-light-bg is-three-quarters">
+                        <ul className="steps has-content-centered">
+                            <li className={classnames({
+                                'steps-segment': true,
+                                'is-active': currentStep === 1,
+                            })}
+                                onClick={() => setStep(1)}
+                            >
+                                <span className="steps-marker">
+                                    <Icon icon="user" />
+                                </span>
+                                <div className="steps-content">
+                                    <p>Client</p>
+                                </div>
+                            </li>
+                            <li className={classnames({
+                                'steps-segment': true,
+                                'is-active': currentStep === 2,
+                            })}
+                                onClick={() => setStep(2)}
+                            >
+                                <span className="steps-marker">
+                                    <Icon icon="cart-arrow-down" />
+                                </span>
+                                <div className="steps-content">
+                                    <p>Produits</p>
+                                </div>
+                            </li>
+                            <li className={classnames({
+                                'steps-segment': true,
+                                'is-active': currentStep === 3,
+                            })}
+                                onClick={() => setStep(3)}
+                            >
+                                <span className="steps-marker">
+                                    <Icon icon="check" />
+                                </span>
+                                <div className="steps-content">
+                                    <p>Validation</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div className="step-content">
+                            { this.renderStep(currentStep, data) }
                         </div>
-                        <div className="level-right">
-                            <button className="button is-rounded" onClick={() => this.nextStep()}>Suivant</button>
+                        <div className="level">
+                            <div className="level-left">
+                                <button className="button is-rounded" onClick={() => prevStep()}>Précédent</button>
+                            </div>
+                            <div className="level-right">
+                                <button className="button is-rounded" onClick={() => nextStep()}>Suivant</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="column content-column">Récap
+                    <div className="column content-column">Récap
                         <OrderPreview />
+                    </div>
                 </div>
-            </div>
+                )}
+            </OrderContext.Consumer>
         )
     }
 
-    renderCurrentStep(customers) {
-        const { currentStep } = this.state
-
+    renderStep(currentStep, {customers, products}) {
         switch(currentStep) {
             case 1:
                 return (
-                    <CustomersList
-                        customers={customers}
-                        onSelected={(c) => this.onCustomerSelected(c)}
-                        selectedCustomer={this.state.order.customer}
-                    />
+                    <OrderContext.Consumer>
+                        { ({ customer, setCustomer, setStep }) => (
+                            <CustomersList
+                                customers={customers}
+                                onSelected={(c) => {
+                                    setCustomer(c);
+                                    setStep(2);
+                                }}
+                                selectedCustomer={customer}
+                            />
+                        )}
+                    </OrderContext.Consumer>
                 )
             case 2:
-                return "2"
+                return (
+                    <OrderContext.Consumer>
+                        {({ addProduct }) => (
+                            <ProductsList
+                                products={products}
+                                onSelect={addProduct}
+                            />
+                        )}
+                    </OrderContext.Consumer>
+                )
             default:
-                return "3"
-        }
-    }
-
-    onCustomerSelected(customer) {
-        // update immutable helper ?
-        const order = Object.assign({}, this.state.order, {
-            customer,
-        });
-
-        if (customer) {
-            this.setState({
-                currentStep: 2,
-                order,
-            })
+                return <OrderPreview />
         }
     }
 }
