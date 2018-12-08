@@ -95,11 +95,11 @@ class OrderCreateView extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="column content-column">Récap
+                    <div className="column content-column">
                         <OrderPreview />
                     </div>
                 </div>
-                )}
+            )}
             </OrderContext.Consumer>
         )
     }
