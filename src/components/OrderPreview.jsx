@@ -12,7 +12,7 @@ const CREATE_ORDER = gql`
             targetDate: $targetDate,
             status: $status,
             customerId: $customerId,
-            products: $products
+            productsOrder: $products
         }) {
             order {
                 id,
@@ -34,6 +34,8 @@ const normalizeOrder = (order) => {
             products.push({
                 productId: po.product.id,
                 quantity: po.quantity,
+                unitPrice: po.product.unitPrice,
+                unit: po.product.unit,
             })
         }
     })
@@ -69,7 +71,6 @@ class OrderPreview extends Component {
     }
 
     afterCreated(data) {
-        console.log(data)
         this.props.history.push('/orders')
     }
 

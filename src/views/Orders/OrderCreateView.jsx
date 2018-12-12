@@ -11,15 +11,17 @@ import ProductsList from '../../components/ProductsList';
 
 const QUERY = gql`{
     customers {
-        id,
-        firstName,
-        lastName,
+        id
+        firstName
+        lastName
         city
     },
     products {
-        id,
-        label,
+        id
+        label
         category
+        unitPrice
+        unit
     }
 }`;
 class OrderCreateView extends Component {

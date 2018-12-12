@@ -49,7 +49,6 @@ class OrdersContainer extends Component {
     }
 
     addProduct = (product) => {
-        console.log(product, this.state.products);
         if (product) {
             const products = [...this.state.products];
             // add qty to the product list

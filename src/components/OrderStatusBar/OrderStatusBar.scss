@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.status {
+    display: inline-flex;
+    width: 0.3rem;
+    height: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    background-color: $blue;
+    border-radius: 1rem;
+
+    &.status-ordered {
+        background-color: $yellow;
+    }
+    &.status-prepared {
+        background-color: $green;
+    }
+    &.status-delivered {
+        background-color: $blue;
+    }
+    &.status-canceled {
+        background-color: $yellow;
+    }
+}
